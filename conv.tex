@@ -23,60 +23,31 @@
 \setlength\parindent{0pt} % Removes all indentation from paragraphs
 \usepackage{float}
 \usepackage{makeidx}
-%\begin{figure}[H]
-%	\centering
-%	\includegraphics[scale = 0.42]{lcaoderecha}
-%	\caption{Eletr\'on ligado solo al n鷆leo derecho}
-%	\label{fig1}
-%	\end{figure}
-
-
-
 
 \begin{document}
-%\tableofcontents
-%\pagebreak
-
-
-
-
-
-
-
-
-
 
 \begin{center}
-\textsc{\LARGE Convoluci髇 2D de Gaussianas}\\[0.5cm]
+\textsc{\LARGE Convoluci贸n 2D de Gaussianas}\\[0.5cm]
 \end{center}
 
-
-Sea $N(x,\mu,\sigma)$ la funci髇 distribuci髇 normal con varianza $\sigma^2$ y promedio $\mu$ definida como sigue:
-
+Sea $N(x,\mu,\sigma)$ la funci贸n distribuci贸n normal con varianza $\sigma^2$ y promedio $\mu$ definida como sigue:
 
 \begin{equation}
 N(x,\mu,\sigma) = \frac{1}{\sqrt{2\pi \sigma^2}}e^{- \frac{(x-\mu)^2}{2\sigma^2}}
 \end{equation}
 
-
 Tome las siguientes distribuciones normales bidimensionales:
-
 
 \begin{equation}
 f(x,y) =  N(x,\mu_{x_1},\sigma_{x_1}) N(y,\mu_{y_1},\sigma_{y_1})
 \end{equation}
-
-
-
 
 \begin{equation}
 g(x,y) =  N(x,\mu_{x_2},\sigma_{x_2}) N(y,\mu_{y_2},\sigma_{y_2})
 \end{equation}
 
 
-El producto de convoluci髇 bidimensional se define como:
-
-
+El producto de convoluci贸n bidimensional se define como:
 
 \begin{equation}
 f*g(x,y)  = \int_{\mathbb{R}} \int_{\mathbb{R}} dt d\tau\;  f(x-t,y-\tau) g(t,\tau)
@@ -88,8 +59,7 @@ Como las funciones se pueden separar, se obtiene lo siguiente:
 \int_{\mathbb{R}} \int_{\mathbb{R}} dt d\tau\;  f(x-t,y-\tau) g(t,\tau)  =\\ \left( \int_{\mathbb{R}} dt\;   N(x-t,\mu_{x_1},\sigma_{x_1})  N(t,\mu_{x_2},\sigma_{x_2})  \right) \times \left( \int_{\mathbb{R}} dt\;   N(y-t,\mu_{y_1},\sigma_{y_1})  N(t,\mu_{y_2},\sigma_{y_2})  \right) 
 \end{multline}
 
-Es decir, se obtiene la multiplicaci髇 de dos convoluciones en una dimensi髇. La convoluci髇 ordinaria de dos distribuciones normales es:
-
+Es decir, se obtiene la multiplicaci贸n de dos convoluciones en una dimensi贸n. La convoluci贸n ordinaria de dos distribuciones normales es:
 
 \begin{equation}
 \int_{\mathbb{R}} dt\;   N(x-t,\mu_{x_1},\sigma_{x_1})  N(t,\mu_{x_2},\sigma_{x_2})  =   N\left(x, \mu_{x_1} +\mu_{x_2}, \sqrt{\sigma_{x_1}^2 + \sigma_{x_2}^2}\right)
@@ -97,27 +67,20 @@ Es decir, se obtiene la multiplicaci髇 de dos convoluciones en una dimensi髇. La
 
 Por lo que, se tiene que:
 
-
 \begin{equation}
 f*g(x,y)   =  N\left(x, \mu_{x_1} +\mu_{x_2}, \sqrt{\sigma_{x_1}^2 + \sigma_{x_2}^2}\right) N\left(x, \mu_{y_1} +\mu_{y_2}, \sqrt{\sigma_{y_1}^2 + \sigma_{y_2}^2}\right)
 \end{equation}
 
-
-Ahora con esto se resuelve el siguiente problema. Suponga tiene unas funciones $g$ y $f$ como se definieron anteriormente. Usted desea encontrar una funci髇 $K$ tal que pase lo siguiente:
+Ahora con esto se resuelve el siguiente problema. Suponga tiene unas funciones $g$ y $f$ como se definieron anteriormente. Usted desea encontrar una funci贸n $K$ tal que pase lo siguiente:
 
 \begin{equation}
 f*K(x,y)   =  g(x,y)
 \end{equation}
 
-La funci髇 $K$ es:
-
-
-
+La funci贸n $K$ es:
 
 \begin{equation}
 K(x,y)   =  N\left(x, \mu_{x_2} - \mu_{x_1} , \sqrt{ \sigma_{x_2}^2 - \sigma_{x_1}^2}\right) N\left(x,  \mu_{y_2}-\mu_{y_1}, \sqrt{  \sigma_{y_2}^2  - \sigma_{y_1}^2}\right)
 \end{equation}
-
-
 
 \end{document}
